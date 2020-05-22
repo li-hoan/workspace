@@ -1,23 +1,15 @@
-# import torch
-#
-# x = torch.tensor([3.0],requires_grad=True)#更新梯度，自动求导为TRUE
-# y = x**3+2
-# # y.backward()#对y求导
-# # print(x.grad)#求出x的梯度
-#
-# print(torch.autograd.grad(y,x))#求导
-
 import random
 import matplotlib.pyplot as plt
 
 _x = [i / 100 for i in range(100)]
 # print(_x)
-_y = [5*e + 1 + random.random() for e in _x]
+_y = [3*e + 4 + random.random() for e in _x]
 # print(_y)
 
 w = random.random()
 b = random.random()
 
+plt.ion()#开启会话
 for i in range(30):
     for x, y in zip(_x, _y):#将数据x输入到构建好的线性模型中，得到输出z（前向过程，推理过程）
         z = w * x + b
@@ -33,7 +25,15 @@ for i in range(30):
 
         print(';w=', w, ';b=', b, ';loss=', loss)
 
-plt.plot(_x, _y,'.')#绘点
-# v = [w * e + b for e in _x]
-# plt.plot(_x,v)
+    v = [w * e + b for e in _x]
+    plt.cla()#清空
+    plt.plot(_x, _y, '.')  # 绘点
+    plt.plot(_x, v)
+    plt.title(loss)
+    plt.pause(0.01)#睡眠0.01秒
+
+
+
+
+plt.ioff()#结束会话
 plt.show()
