@@ -31,9 +31,9 @@ for i in range(30):
         b = 0.1 * db + b
 
 
-        print(';w=', w, ';b=', b, ';loss=', loss)
+        print('w=', w, ';b=', b, ';loss=', loss)
 
 plt.plot(_x, _y,'.')#绘点
-# v = [w * e + b for e in _x]
-# plt.plot(_x,v)
+v = [w * e + b for e in _x]
+plt.plot(_x,v)
 plt.show()

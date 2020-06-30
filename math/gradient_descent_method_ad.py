@@ -27,7 +27,7 @@ for i in range(30):
 
     v = [w * e + b for e in _x]
     plt.cla()#清空
-    plt.plot(_x, _y, '.')  # 绘点
+    plt.scatter(_x, _y)  # 绘点
     plt.plot(_x, v)
     plt.title(loss)
     plt.pause(0.01)#睡眠0.01秒
