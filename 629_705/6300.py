@@ -12,7 +12,7 @@ np.random.RandomState(0)
 x,y = datasets.make_regression(n_samples=100,n_features=1,n_targets=1,noise=10)
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.3)
 
-# reg = linear_model.LinearRegression()
+reg = linear_model.LinearRegression()
 # reg = linear_model.Ridge(0.5)
 # reg = linear_model.Lasso(0.5)
 # reg = linear_model.ElasticNet(0.6,0.5)
